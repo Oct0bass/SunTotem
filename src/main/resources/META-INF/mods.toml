@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[34,)"
+#issueTrackerURL="github.com/Oct0bass/SunTotem/issues"
+showAsResourcePack=false
+license="GPL"
+
+[[mods]]
+    modId="suntotem"
+    version="0.1.0-alpha0.1"
+    displayName="Sun Totem"
+    authors="Rohan Rajagopal (Octo0bass)"
+    description="Yes it's overdone as heck but I couldn't think of anything else for my first mod"
+
+    [[dependencies.suntotem]]
+        modId="forge"
+        mandatory=true
+        versionRange="[34,)"
+        ordering="NONE"
+        side="BOTH"
+
+    [[dependencies.suntotem]]
+        modId="minecraft"
+        mandatory=true
+        versionRange="[1.16.3]"
+        ordering="NONE"
+        side="BOTH"

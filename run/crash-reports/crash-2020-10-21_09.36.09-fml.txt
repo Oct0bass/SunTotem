@@ -1,0 +1,163 @@
+---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 10/21/20 9:36 AM
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.fml.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:85) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.client.ClientModLoader.completeModLoading(ClientModLoader.java:188) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.lambda$null$1(Minecraft.java:499) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.util.Util.acceptOrElse(Util.java:323) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraft.client.Minecraft.lambda$new$2(Minecraft.java:495) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.ResourceLoadProgressGui.func_230430_a_(ResourceLoadProgressGui.java:113) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:492) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:990) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:589) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-7.0.1.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraft.state.StateHolder.with(StateHolder.java:106) ~[?:?] {re:classloading}
+-- MOD suntotem --
+Details:
+	Mod File: main
+	Failure message: Sun Totem (suntotem) encountered an error during the load_registries event phase
+		java.lang.IllegalArgumentException: Cannot set property BooleanProperty{name=all, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in Block{null}
+	Mod Version: 0.1.0-alpha0.1
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.IllegalArgumentException: Cannot set property BooleanProperty{name=all, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in Block{null}
+Stacktrace:
+	at net.minecraft.state.StateHolder.with(StateHolder.java:106) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at rrajagopal.suntotem.common.block.BlockSunTotem.<init>(BlockSunTotem.java:16) ~[main/:?] {re:classloading}
+	at rrajagopal.suntotem.common.init.SunTotemBlocks.BLOCK_SUN_TOTEM(SunTotemBlocks.java:10) ~[main/:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.lambda$register$0(DeferredRegister.java:124) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.addEntries(DeferredRegister.java:200) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.access$000(DeferredRegister.java:61) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:172) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_0_EventDispatcher_handleEvent_Register.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-3.0.3-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:297) ~[eventbus-3.0.3-service.jar:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:120) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:34.1] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$null$4(ModContainer.java:112) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.GameData.lambda$null$13(GameData.java:362) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:112) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1640) ~[?:1.8.0_265] {}
+	at net.minecraftforge.fml.ModWorkManager$SyncExecutor.driveOne(ModWorkManager.java:56) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModWorkManager$DrivenExecutor.drive(ModWorkManager.java:40) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:248) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:235) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:201) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.client.ClientModLoader.lambda$begin$1(ClientModLoader.java:103) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.fml.client.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:123) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.fml.client.ClientModLoader.begin(ClientModLoader.java:103) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:429) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:149) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-7.0.1.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+
+
+-- MOD suntotem --
+Details:
+	Mod File: main
+	Failure message: Sun Totem (suntotem) encountered an error during the error event phase
+		java.lang.NullPointerException: Registry Object not present: suntotem:sun_totem
+	Mod Version: 0.1.0-alpha0.1
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.NullPointerException: Registry Object not present: suntotem:sun_totem
+Stacktrace:
+	at java.util.Objects.requireNonNull(Objects.java:290) ~[?:1.8.0_265] {}
+	at net.minecraftforge.fml.RegistryObject.get(RegistryObject.java:120) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at rrajagopal.suntotem.common.init.SunTotemTileEntities.TILE_SUN_TOTEM(SunTotemTileEntities.java:9) ~[main/:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.lambda$register$0(DeferredRegister.java:124) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.addEntries(DeferredRegister.java:200) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister.access$000(DeferredRegister.java:61) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:172) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_0_EventDispatcher_handleEvent_Register.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-3.0.3-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:297) ~[eventbus-3.0.3-service.jar:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:120) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:34.1] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$null$4(ModContainer.java:112) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.registries.GameData.lambda$null$13(GameData.java:362) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:112) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1640) ~[?:1.8.0_265] {}
+	at net.minecraftforge.fml.ModWorkManager$SyncExecutor.driveOne(ModWorkManager.java:56) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModWorkManager$DrivenExecutor.drive(ModWorkManager.java:40) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.waitForTransition(ModLoader.java:248) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:235) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:201) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.client.ClientModLoader.lambda$begin$1(ClientModLoader.java:103) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.fml.client.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:123) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.fml.client.ClientModLoader.begin(ClientModLoader.java:103) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:429) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:149) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:52) ~[forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-7.0.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-7.0.1.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.3
+	Minecraft Version ID: 1.16.3
+	Operating System: Mac OS X (x86_64) version 10.15.7
+	Java Version: 1.8.0_265, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 1449735208 bytes (1382 MB) / 1752694784 bytes (1671 MB) up to 3817865216 bytes (3641 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -Xss1M
+	ModLauncher: 7.0.1+78+master.e9771d8
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.1.jar mixin PLUGINSERVICE 
+		/eventbus-3.0.3-service.jar eventbus PLUGINSERVICE 
+		/forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.2.0-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.1.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 34.1
+	Forge: net.minecraftforge:34.1.0
+	FML Language Providers: 
+		javafml@34.1
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.16.3 COMMON_SETUP}
+		forge-1.16.3-34.1.0_mapped_snapshot_20200514-1.16-recomp.jar Forge {forge@34.1.0 COMMON_SETUP}
+		main Sun Totem {suntotem@0.1.0-alpha0.1 VALIDATE}
