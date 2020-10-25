@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " e ",
+    "dnd",
+    "nnn"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:emerald_block"
+    },
+    "d": {
+      "item": "minecraft:diamond_block"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "suntotem:sun_totem",
+    "count": 1
+  }
+}

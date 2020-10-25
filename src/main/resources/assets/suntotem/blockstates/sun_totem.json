@@ -1,6 +1,6 @@
 {
   "variants": {
-    "all": {
+    "": {
       "model": "block/sun_totem"
     }
   }
