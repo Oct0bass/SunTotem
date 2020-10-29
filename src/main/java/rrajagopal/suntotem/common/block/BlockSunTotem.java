@@ -7,7 +7,7 @@ import net.minecraft.world.IBlockReader;
 import rrajagopal.suntotem.common.init.SunTotemTileEntities;
 
 public class BlockSunTotem extends Block {
-    public BlockSunTotem (Properties properties) {
+    public BlockSunTotem(Properties properties) {
         super(properties);
     }
 
