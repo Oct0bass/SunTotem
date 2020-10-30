@@ -29,8 +29,8 @@ public class TileEntitySunTotem extends TileEntity implements ITickableTileEntit
         if (this.world != null) {
             DimensionType dimType = this.world.func_230315_m_();
             if (dimType.func_241514_p_() && !dimType.hasSkyLight()) {
-                this.world.createExplosion(null, this.pos.getX(), this.pos.getY(), this.pos.getZ(), 20f, Explosion.Mode.DESTROY);
                 this.world.destroyBlock(this.pos, false);
+                this.world.createExplosion(null, this.pos.getX(), this.pos.getY(), this.pos.getZ(), 10f, Explosion.Mode.DESTROY);
                 this.world = null;
             } else {
                 if (!this.world.isRemote()) {
