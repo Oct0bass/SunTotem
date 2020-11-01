@@ -15,25 +15,25 @@ public class TileEntitySunTotem extends TileEntity implements ITickableTileEntit
     }
 
     public int getTime() {
-        return this.getTileData().getInt("time");
+        return getTileData().getInt("time");
     }
 
     public void setTime(int time) {
         CompoundNBT data = new CompoundNBT();
         data.putInt("time", time);
-        this.write(data);
+        write(data);
     }
 
     @Override
     public void tick() {
-        if (this.world != null && !world.isRemote()) {
-            DimensionType dimType = this.world.func_230315_m_();
+        if (world != null && !world.isRemote()) {
+            DimensionType dimType = world.func_230315_m_();
             if (dimType.func_241514_p_() && !dimType.hasSkyLight()) {
-                this.world.destroyBlock(this.pos, false);
-                this.world.createExplosion(null, this.pos.getX(), this.pos.getY(), this.pos.getZ(), 10f, Explosion.Mode.DESTROY);
-                this.world = null;
+                world.destroyBlock(pos, false);
+                world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 10f, Explosion.Mode.DESTROY);
+                world = null;
             } else {
-                ((ServerWorld) world).func_241114_a_(this.getTime());
+                ((ServerWorld) world).func_241114_a_(getTime());
             }
         }
     }
