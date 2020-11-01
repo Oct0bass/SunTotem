@@ -13,6 +13,6 @@ public class SunTotemItems {
                 .group(ItemGroup.BUILDING_BLOCKS)
                 .addToolType(ToolType.PICKAXE, 4)
                 .rarity(Rarity.EPIC)
-        ).setRegistryName("sun_totem");
+        );
     }
 }
