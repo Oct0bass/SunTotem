@@ -11,7 +11,7 @@ import rrajagopal.suntotem.common.init.SunTotemTileEntities;
 public class TileEntitySunTotem extends TileEntity implements ITickableTileEntity {
     public TileEntitySunTotem() {
         super(SunTotemTileEntities.TILE_SUN_TOTEM());
-        this.setTime(6000);
+        //this.setTime(6000);
     }
 
     public int getTime() {
@@ -26,16 +26,14 @@ public class TileEntitySunTotem extends TileEntity implements ITickableTileEntit
 
     @Override
     public void tick() {
-        if (this.world != null) {
+        if (this.world != null && !world.isRemote()) {
             DimensionType dimType = this.world.func_230315_m_();
             if (dimType.func_241514_p_() && !dimType.hasSkyLight()) {
                 this.world.destroyBlock(this.pos, false);
                 this.world.createExplosion(null, this.pos.getX(), this.pos.getY(), this.pos.getZ(), 10f, Explosion.Mode.DESTROY);
                 this.world = null;
             } else {
-                if (!this.world.isRemote()) {
-                    ((ServerWorld) world).func_241114_a_(this.getTime());
-                }
+                ((ServerWorld) world).func_241114_a_(this.getTime());
             }
         }
     }
