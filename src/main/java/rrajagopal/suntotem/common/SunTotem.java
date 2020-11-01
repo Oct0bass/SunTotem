@@ -1,6 +1,7 @@
 package rrajagopal.suntotem.common;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -9,6 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rrajagopal.suntotem.common.init.SunTotemBlocks;
+import rrajagopal.suntotem.common.init.SunTotemItems;
 import rrajagopal.suntotem.common.init.SunTotemTileEntities;
 import rrajagopal.suntotem.common.tile.TileEntitySunTotem;
 
@@ -18,13 +20,16 @@ public class SunTotem {
 
     private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MODID);
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     public static final RegistryObject<TileEntityType<TileEntitySunTotem>> TILE_SUN_TOTEM = TILES.register("sun_totem", SunTotemTileEntities::TILE_SUN_TOTEM);
     public static final RegistryObject<Block> BLOCK_SUN_TOTEM = BLOCKS.register("sun_totem", SunTotemBlocks::BLOCK_SUN_TOTEM);
+    public static final RegistryObject<Item> ITEM_SUN_TOTEM = ITEMS.register("sun_totem", SunTotemItems::ITEM_SUN_TOTEM);
 
     public SunTotem() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         BLOCKS.register(bus);
         TILES.register(bus);
+        ITEMS.register(bus);
     }
 }
