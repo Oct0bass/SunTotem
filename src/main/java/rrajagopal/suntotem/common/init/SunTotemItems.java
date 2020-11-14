@@ -12,6 +12,7 @@ public class SunTotemItems {
         return new BlockItem(SunTotemBlocks.BLOCK_SUN_TOTEM(), new Item.Properties()
                 .group(ItemGroup.BUILDING_BLOCKS)
                 .addToolType(ToolType.PICKAXE, 4)
+                .maxStackSize(1)
                 .rarity(Rarity.EPIC)
         );
     }
