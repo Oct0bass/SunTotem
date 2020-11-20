@@ -12,7 +12,7 @@ import rrajagopal.suntotem.common.block.BlockSunTotem;
 public class SunTotemBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SunTotem.MODID);
 
-    public static RegistryObject<Block> BLOCK_SUN_TOTEM = BLOCKS.register("sun_totem", () -> new BlockSunTotem(
+    public static final RegistryObject<Block> BLOCK_SUN_TOTEM = BLOCKS.register("sun_totem", () -> new BlockSunTotem(
             AbstractBlock.Properties.create(Material.GLASS).hardnessAndResistance(50, 100))
     );
 }
