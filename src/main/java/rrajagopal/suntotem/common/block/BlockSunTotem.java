@@ -17,6 +17,6 @@ public class BlockSunTotem extends Block {
     }
 
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return SunTotemTileEntities.TILE_SUN_TOTEM().create();
+        return SunTotemTileEntities.TILE_SUN_TOTEM.get().create();
     }
 }

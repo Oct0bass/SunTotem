@@ -10,7 +10,7 @@ import rrajagopal.suntotem.common.init.SunTotemTileEntities;
 
 public class TileEntitySunTotem extends TileEntity implements ITickableTileEntity {
     public TileEntitySunTotem() {
-        super(SunTotemTileEntities.TILE_SUN_TOTEM());
+        super(SunTotemTileEntities.TILE_SUN_TOTEM.get());
         //this.setTime(6000);
     }
 
