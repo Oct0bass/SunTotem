@@ -27,13 +27,13 @@ public class TileEntitySunTotem extends TileEntity implements ITickableTileEntit
     @Override
     public void tick() {
         if (world != null && !world.isRemote()) {
-            DimensionType dimType = world.func_230315_m_();
-            if (dimType.func_241514_p_() && !dimType.hasSkyLight()) {
+            DimensionType dimType = world.getDimensionType();
+            if (dimType.doesFixedTimeExist() && !dimType.hasSkyLight()) {
                 world.destroyBlock(pos, false);
                 world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 10f, Explosion.Mode.DESTROY);
                 world = null;
             } else {
-                ((ServerWorld) world).func_241114_a_(getTime());
+                ((ServerWorld) world).setDayTime(getTime());
             }
         }
     }
