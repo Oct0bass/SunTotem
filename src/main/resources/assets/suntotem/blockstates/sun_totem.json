@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "block/sun_totem"
+      "model": "suntotem:block/sun_totem"
     }
   }
 }

@@ -6,7 +6,7 @@ license="GPL"
 
 [[mods]]
     modId="suntotem"
-    version="0.1.0-alpha0.1"
+    version="0.1.0-alpha1.0"
     displayName="Sun Totem"
     authors="Rohan Rajagopal (Octo0bass)"
     description="Yes it's overdone as heck but I couldn't think of anything else for my first mod"
