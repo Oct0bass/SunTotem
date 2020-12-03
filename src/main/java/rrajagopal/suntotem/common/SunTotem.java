@@ -6,6 +6,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import rrajagopal.suntotem.common.init.SunTotemBlocks;
 import rrajagopal.suntotem.common.init.SunTotemItems;
 import rrajagopal.suntotem.common.init.SunTotemTileEntities;
+import rrajagopal.suntotem.common.network.NetworkDispatcher;
 
 @Mod(SunTotem.MODID)
 public class SunTotem {
@@ -16,5 +17,6 @@ public class SunTotem {
         SunTotemBlocks.BLOCKS.register(bus);
         SunTotemTileEntities.TILES.register(bus);
         SunTotemItems.ITEMS.register(bus);
+        NetworkDispatcher.init();
     }
 }

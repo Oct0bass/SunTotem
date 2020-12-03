@@ -4,14 +4,25 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.DistExecutor;
+import rrajagopal.suntotem.client.gui.TimeSetScreen;
 import rrajagopal.suntotem.common.init.SunTotemTileEntities;
+import rrajagopal.suntotem.common.tile.TileEntitySunTotem;
 
 public class BlockSunTotem extends Block {
     public BlockSunTotem() {
@@ -19,7 +30,7 @@ public class BlockSunTotem extends Block {
                 .notSolid()
                 .hardnessAndResistance(50, 100)
                 .harvestTool(ToolType.PICKAXE)
-                .harvestLevel(4)
+                .harvestLevel(4) //Netherite
         );
     }
 
@@ -43,5 +54,14 @@ public class BlockSunTotem extends Block {
 
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
         return SunTotemTileEntities.TILE_SUN_TOTEM.get().create();
+    }
+
+    @Override
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+            TileEntity tile = worldIn.getTileEntity(pos);
+            Minecraft.getInstance().displayGuiScreen(new TimeSetScreen(new StringTextComponent("Set Time"), pos, tile instanceof TileEntitySunTotem ? ((TileEntitySunTotem) tile).getTime() : 6000));
+        });
+        return ActionResultType.CONSUME;
     }
 }
